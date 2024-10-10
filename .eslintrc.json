@@ -1,0 +1,85 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "@feature-sliced",
+    "eslint:recommended",
+    "plugin:import/recommended",
+    "plugin:promise/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:jest/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "import",
+    "promise",
+    "simple-import-sort",
+    "@typescript-eslint",
+    "jest"
+  ],
+  "root": true,
+  "rules": {
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        "classes": true,
+        "functions": false,
+        "variables": true
+      }
+    ],
+    "import/no-default-export": "warn",
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^\\u0000"],
+          ["^node:"],
+          ["^react", "^@react", "^"],
+          ["^@?\\w"],
+          ["^src", "^@/"],
+          ["^"],
+          ["^\\."]
+        ]
+      }
+    ],
+    "react/no-array-index-key": "warn",
+    "no-plusplus": "warn",
+    "@typescript-eslint/no-floating-promises": "warn",
+    "@typescript-eslint/no-misused-promises": "warn",
+    "no-bitwise": "warn",
+    "@typescript-eslint/lines-between-class-member": "off",
+    "@typescript-eslint/no-throw-literal": "off",
+    "@typescript-eslint/lines-between-class-members": "off"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "node": true,
+      "typescript": true
+    }
+  }
+}
